@@ -1,0 +1,29 @@
+#/usr/bin/env python
+#-*- coding: utf-8 -*-
+
+import datetime
+import time
+
+
+
+def main():
+
+    struct_time = time.strptime("2015 9 30", "%Y %m %d")
+    print "returned tuple:\n %s \n" % struct_time
+
+
+    now = time.time()
+    n = 8
+    before = now - n * 24 * 3600
+    localtime = time.localtime(now)
+    localtime2 = time.localtime(before)
+    print "Local current time :\n", localtime, now
+    print "Local current time2 :\n", localtime2, before
+
+    beginTime = '%d-%02d-%02d' % (localtime2.tm_year, localtime2.tm_mon, localtime2.tm_mday)
+    endTime = '%d-%02d-%02d' % (localtime.tm_year, localtime.tm_mon, localtime.tm_mday)
+    print beginTime
+    print endTime
+
+if __name__ == '__main__':
+    main()
